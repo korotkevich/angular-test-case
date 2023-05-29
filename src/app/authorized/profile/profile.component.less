@@ -1,0 +1,70 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .form-group {
+        width: 50%;
+    }
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.fa {
+    padding: 10px;
+    background: #8676b6;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 2px;
+
+    &.input-phone {
+        width: 97%;
+        border-left: none;
+        border-radius: 0;
+        padding-left: 0;
+
+        &:focus {
+            border-left: none;
+        }
+    }
+}
+
+.phone-placeholder {
+    width: 3%;
+    border: 1px solid black;
+    border-right: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn {
+    background-color: #8676b6;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        opacity: 0.2;
+        cursor: default;
+    }
+}

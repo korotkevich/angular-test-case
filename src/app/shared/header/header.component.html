@@ -1,0 +1,18 @@
+<header class="header">
+    <nav class="profile-container">
+        <ng-container *ngIf="isLoggedIn; else login">
+        <span class="profile-link" (click)="navigateToProfile()" *ngIf="userName$ | async as user">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+            {{user}}
+        </span>
+            <div class="profile-update--success" *ngIf="isProfileUpdated$ | async">
+                Your Profile has been successfully updated!
+            </div>
+            <button class="btn" (click)="logout()">Log out</button>
+        </ng-container>
+    </nav>
+</header>
+
+<ng-template #login>
+    <a routerLink="unauthorized/login">Log in</a>
+</ng-template>

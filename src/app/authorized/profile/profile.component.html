@@ -1,0 +1,43 @@
+<h1>Profile form</h1>
+<div class="form-container">
+    <form [formGroup]="profileForm" novalidate (ngSubmit)="submit()" class="form-group">
+        <div class="input-container">
+            <i class="fa fa-user-o"></i>
+            <input class="input-field" formControlName="firstName" placeholder="First name"/>
+            <ng-container *ngIf="profileForm.get('firstName')?.invalid">
+                <app-error [text]="errors.InvalidName"></app-error>
+            </ng-container>
+        </div>
+        <div class="input-container">
+            <i class="fa fa-user-o"></i>
+            <input class="input-field" formControlName="lastName" placeholder="Last name"/>
+            <ng-container *ngIf="profileForm.get('lastName')?.invalid">
+                <app-error [text]="errors.InvalidLastName"></app-error>
+            </ng-container>
+        </div>
+        <div class="input-container">
+            <i class="fa fa-envelope-o"></i>
+            <input class="input-field" formControlName="email" placeholder="Email" readonly/>
+        </div>
+        <div class="input-container">
+            <i class="fa fa-phone"></i>
+            <span class="phone-placeholder">+7</span>
+            <input class="input-field input-phone" formControlName="phone"/>
+            <ng-container *ngIf="profileForm.get('phone')?.invalid">
+                <app-error [text]="errors.InvalidPhone"></app-error>
+            </ng-container>
+        </div>
+        <div class="input-container">
+            <i class="fa fa-link"></i>
+            <input class="input-field" formControlName="url" placeholder="URL"/>
+            <ng-container *ngIf="profileForm.get('url')?.invalid">
+                <app-error [text]="errors.InvalidURL"></app-error>
+            </ng-container>
+        </div>
+        <div class="input-container">
+            <button class="btn btn-default" [disabled]="profileForm.invalid">
+                Update
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+.error-container {
+    width: 270px;
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    background: red;
+    color: #fff;
+    border-radius: 3px;
+    opacity: 30%;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 8px;
+        border: 9px solid transparent;
+        border-right-color: red;
+        margin-top: -1px;
+    }
+}
+
